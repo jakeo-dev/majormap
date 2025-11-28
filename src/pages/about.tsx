@@ -72,7 +72,7 @@ export default function Home() {
             Add classes by dragging them into your timeline. Double-click a course to edit
             its name, units, or style. Click on the calendar icons to add more terms
             to your flowchart. Open the settings icon in the top-right corner
-            (<LuCog className="inline w-4 h-4 transition hover:rotate-90 hover:text-blue-600 active:rotate-180 active:text-blue-700" />) 
+            (<LuCog className="inline w-4 h-4 transition hover:rotate-90 hover:text-blue-100 active:rotate-180 active:text-blue-700" />) 
              to switch between semester and quarter views, adjust the flowchart layout, or sort
             courses within each term. 
           </p>
@@ -87,7 +87,7 @@ export default function Home() {
               href="https://github.com/jakeo-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-blue-600 hover:underline"
+              className="font-semibold text-blue-100 hover:underline"
             >
               Jake
             </a>{" "}
@@ -96,7 +96,7 @@ export default function Home() {
               href="https://github.com/hoverdart"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-blue-600 hover:underline"
+              className="font-semibold text-blue-100 hover:underline"
             >
               Shaurya
             </a>
@@ -107,13 +107,12 @@ export default function Home() {
               title="degree icons"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-100 hover:underline"
             >
-              Smashicons – Flaticon
+              Smashicons - Flaticon
             </a>
             .
           </p>
-
       </div>
     </>
   );

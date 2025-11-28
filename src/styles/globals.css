@@ -1,2 +1,75 @@
 @import "tailwindcss";
 
+@theme {
+  --color-red-50: #ff878c;
+  --color-red-100: #e34f55;
+  --color-red-200: #cc363c;
+  --color-red-300: #ad2b31;
+  --color-red-400: #8a2126;
+  --color-red-500: #69181c;
+  --color-red-600: #471012;
+  --color-red-700: #2e0809;
+  --color-red-800: #1a0405;
+  --color-red-900: #0d0202;
+
+  --color-orange-100: #ff7c3e;
+  --color-orange-200: #d9733d;
+  --color-orange-300: #b15f33;
+  --color-orange-400: #8e4c2a;
+  --color-orange-500: #6c3a20;
+  --color-orange-600: #4a2616;
+  --color-orange-700: #2f170e;
+  --color-orange-800: #1a0d07;
+  --color-orange-900: #0d0603;
+
+  --color-yellow-100: #f0a75c;
+  --color-yellow-200: #b89a04;
+  --color-yellow-300: #9c7e03;
+  --color-yellow-400: #7f6202;
+  --color-yellow-500: #614f01;
+  --color-yellow-600: #423400;
+  --color-yellow-700: #2a2200;
+  --color-yellow-800: #170f00;
+  --color-yellow-900: #0b0800;
+
+  --color-green-100: #5cb85c;
+  --color-green-200: #4ba148;
+  --color-green-300: #3a8c3a;
+  --color-green-400: #2c732c;
+  --color-green-500: #205920;
+  --color-green-600: #143f14;
+  --color-green-700: #0a290a;
+  --color-green-800: #051705;
+  --color-green-900: #020d02;
+
+  --color-blue-50: #8ca1f5;
+  --color-blue-100: #6777c2;
+  --color-blue-200: #5261a3;
+  --color-blue-300: #43508c;
+  --color-blue-400: #353f75;
+  --color-blue-500: #262e5e;
+  --color-blue-600: #181f47;
+  --color-blue-700: #0d122f;
+  --color-blue-800: #060919;
+  --color-blue-900: #030405;
+
+  --color-violet-100: #9b6ec0;
+  --color-violet-200: #8552a3;
+  --color-violet-300: #6f3d8c;
+  --color-violet-400: #583075;
+  --color-violet-500: #411f5e;
+  --color-violet-600: #2b1347;
+  --color-violet-700: #1a0a2f;
+  --color-violet-800: #0d0519;
+  --color-violet-900: #06020e;
+
+  --color-neutral-100: #999999;
+  --color-neutral-200: #808080;
+  --color-neutral-300: #666666;
+  --color-neutral-400: #4d4d4d;
+  --color-neutral-500: #333333;
+  --color-neutral-600: #1a1a1a;
+  --color-neutral-700: #0d0d0d;
+  --color-neutral-800: #070707;
+  --color-neutral-900: #030303;
+}

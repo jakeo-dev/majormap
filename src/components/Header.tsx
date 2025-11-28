@@ -60,8 +60,8 @@ export default function Header({
           <Link
             className={`${
               pathname == "/"
-                ? "bg-neutral-400/20 dark:bg-neutral-300/20"
-                : "hover:bg-neutral-400/15 active:bg-neutral-400/20 dark:hover:bg-neutral-300/15 dark:active:bg-neutral-300/20"
+                ? "bg-neutral-200/30"
+                : "hover:bg-neutral-200/20 active:bg-neutral-200/30"
             } flex justify-center items-center rounded-md text-lg md:text-base text-left transition p-1.5 md:px-3 md:py-2`}
             href="/"
           >
@@ -73,8 +73,8 @@ export default function Header({
           <Link
             className={`${
               pathname == "/about"
-                ? "bg-neutral-400/20 dark:bg-neutral-300/20"
-                : "hover:bg-neutral-400/15 active:bg-neutral-400/20 dark:hover:bg-neutral-300/15 dark:active:bg-neutral-300/20"
+                ? "bg-neutral-200/30"
+                : "hover:bg-neutral-200/20 active:bg-neutral-200/30"
             } flex justify-center items-center rounded-md text-lg md:text-base text-left transition p-1.5 md:px-3 md:py-2`}
             href="/about"
           >
@@ -86,8 +86,8 @@ export default function Header({
           <button
             className={`${
               isOpen
-                ? "rotate-90 text-blue-600"
-                : "hover:rotate-90 hover:text-blue-600 active:rotate-180 active:text-blue-700"
+                ? "rotate-90 text-blue-100"
+                : "hover:rotate-90 hover:text-blue-100 active:rotate-180 active:text-blue-200"
             } min-h-max flex justify-center items-center rounded-md text-lg md:text-xl text-left transition cursor-pointer ml-1.5 md:ml-3`}
             onClick={() => {
               onOpen();
@@ -111,23 +111,23 @@ export default function Header({
           if (e.key === "Escape") onClose();
         }}
       >
-        <div className="bg-gray-100 rounded-2xl shadow-xl w-[95vw] max-w-md p-6 relative animate-fadeIn">
+        <div className="bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-md p-6 relative animate-fadeIn">
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition cursor-pointer"
+            className="absolute top-4 right-4 text-gray-500 hover:text-gray-400 transition cursor-pointer"
           >
             <FaTimes size={20} aria-label="Close modal" title="Close modal" />
           </button>
 
           {/* Modal Title */}
-          <h2 className="text-xl font-semibold mb-4 text-gray-800">
+          <h2 className="text-xl font-semibold mb-4 text-gray-200">
             {firstVisit == "true" ? "Let's Get Started" : "Settings"}
           </h2>
 
           {/* Term System */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-600 mb-2">
+            <label className="block text-sm font-medium text-gray-500 mb-2">
               Term System
             </label>
             <div className="flex gap-2">
@@ -135,8 +135,8 @@ export default function Header({
                 <button
                   key={t}
                   onClick={() => setTermType(t)}
-                  className={`flex justify-center items-center bg-gray-200 hover:bg-blue-200 active:bg-blue-300 hover:text-blue-900 border-2 transition rounded-sm w-full cursor-pointer py-1 ${
-                    termType === t ? "border-blue-500" : "border-transparent"
+                  className={`flex justify-center items-center bg-gray-600 hover:bg-blue-200 active:bg-blue-300 ring-2 ring-offset-2 ring-offset-gray-900 transition rounded-sm w-full cursor-pointer py-1 ${
+                    termType === t ? "ring-blue-200" : "ring-transparent"
                   }`}
                 >
                   <LuColumns2
@@ -158,7 +158,7 @@ export default function Header({
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-600 mb-2">
+            <label className="block text-sm font-medium text-gray-500 mb-2">
               View Type
             </label>
             <div className="flex gap-2">
@@ -166,8 +166,8 @@ export default function Header({
                 <button
                   key={v}
                   onClick={() => setViewType(v)}
-                  className={`flex justify-center items-center bg-gray-200 hover:bg-blue-200 active:bg-blue-300 hover:text-blue-900 border-2 transition rounded-sm w-full cursor-pointer py-1 ${
-                    viewType === v ? "border-blue-500" : "border-transparent"
+                  className={`flex justify-center items-center bg-gray-600 hover:bg-blue-200 active:bg-blue-300 ring-2 ring-offset-2 ring-offset-gray-900 transition rounded-sm w-full cursor-pointer py-1 ${
+                    viewType === v ? "ring-blue-200" : "ring-transparent"
                   }`}
                 >
                   <LuGalleryHorizontal
@@ -189,7 +189,7 @@ export default function Header({
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-600 mb-2">
+            <label className="block text-sm font-medium text-gray-500 mb-2">
               Sort Courses By
             </label>
             <div className="flex gap-2">
@@ -197,8 +197,8 @@ export default function Header({
                 <button
                   key={s}
                   onClick={() => setSortType(s)}
-                  className={`flex justify-center items-center bg-gray-200 hover:bg-blue-200 active:bg-blue-300 hover:text-blue-900 border-2 transition rounded-sm w-full cursor-pointer py-1 ${
-                    sortType === s ? "border-blue-500" : "border-transparent"
+                  className={`flex justify-center items-center bg-gray-600 hover:bg-blue-200 active:bg-blue-300 ring-2 ring-offset-2 ring-offset-gray-900 transition rounded-sm w-full cursor-pointer py-1 ${
+                    sortType === s ? "ring-blue-200" : "ring-transparent"
                   }`}
                 >
                   {s}
@@ -211,7 +211,7 @@ export default function Header({
           <div className="flex justify-end gap-3">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-sm rounded-lg bg-gray-200 hover:bg-gray-300 transition cursor-pointer"
+              className="px-4 py-2 text-sm rounded-lg bg-gray-600 hover:bg-gray-500 transition cursor-pointer"
             >
               Cancel
             </button>
@@ -221,7 +221,7 @@ export default function Header({
                 onSubmit(viewType, termType, sortType);
                 onClose();
               }}
-              className="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition cursor-pointer"
+              className="px-4 py-2 text-sm bg-blue-200 text-white rounded-lg hover:bg-blue-300 transition cursor-pointer"
             >
               Save
             </button>

@@ -218,10 +218,10 @@ export default function Home() {
       <DndContext onDragEnd={handleDragEnd}>
         <div className="m-4 md:m-12 lg:m-20 mt-14 md:mt-24 lg:mt-24">
           <div>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 mb-6 lg:mb-8">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 mb-4 lg:mb-8">
               <div className="flex flex-1 gap-4 md:gap-6 lg:gap-8">
                 {/* "Outside" Box at the Top */}
-                <Droppable dropId="outside" className="flex-1 min-h-30 md:min-h-36 border-2 border-gray-300 border-dashed rounded-md p-2.5 md:p-4">
+                <Droppable dropId="outside" className="flex-1 min-h-30 md:min-h-36 border-2 border-gray-700 border-dashed rounded-md p-2.5 md:p-4">
                   <h2 className="font-bold text-sm md:text-base">Your Courses</h2>
                   <div className="relative flex flex-wrap items-start gap-2 md:gap-3 mt-3">
                     {termsCoursesData["outside"].map((course) => (
@@ -229,7 +229,7 @@ export default function Home() {
                       </Draggable>
                     ))}
 
-                    <button onClick={addCourse} className="bg-gray-200 hover:bg-blue-200 active:bg-blue-300 hover:text-blue-900 flex items-center justify-center w-full max-w-28 md:max-w-34 min-h-max h-19 md:h-22 rounded-md p-2 text-left transition-colors cursor-pointer">
+                    <button onClick={addCourse} className="bg-gray-600 hover:bg-gray-700 active:bg-gray-800 text-gray-200 flex items-center justify-center w-full max-w-28 md:max-w-36 min-h-max h-19.5 md:h-23 rounded-md p-2 text-left transition-colors cursor-pointer">
                       <LuCirclePlus className="text-xl md:text-2xl mr-2 md:mr-3" aria-hidden />
                       <span className="w-min wrap-break-word text-sm md:text-base">Add Course</span>
                     </button>
@@ -237,7 +237,7 @@ export default function Home() {
                 </Droppable>
 
                 {/* trash box for removing courses */}
-                <Droppable dropId="delete" className="relative max-w-full max-h-30 md:max-h-36 flex-[0.1] md:flex-[0.075] text-center text-gray-400 transition border-2 border-gray-300 border-dashed rounded-md flex items-center justify-center px-2 md:px-4">
+                <Droppable dropId="delete" className="relative max-w-full max-h-30 md:max-h-36 flex-[0.1] md:flex-[0.075] text-center text-gray-400 transition border-2 border-gray-700 border-dashed rounded-md flex items-center justify-center px-2 md:px-4">
                   <div className="w-full">
                     <LuTrash2 className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-xl md:text-3xl" aria-hidden />
                   </div>
@@ -245,18 +245,18 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={`${viewType == "Vertical" ? "mb-8" : "flex gap-4"}`}>
+            <div className={`${viewType == "Vertical" ? "mb-8" : "flex gap-4 flex-col md:flex-row"}`}>
               {/* The rest of the terms in a grid */}
-              <div className={`${viewType == "Vertical" ? `w-full grid ${termType == "Quarter" ? "grid-cols-2 md:grid-cols-4" : "grid-cols-3"} gap-3 md:gap-y-8 lg:gap-x-6 lg:gap-y-12 place-items-start mb-8` : "w-min overflow-x-scroll flex gap-0"}`}>
+              <div className={`${viewType == "Vertical" ? `w-full grid ${termType == "Quarter" ? "grid-cols-2 md:grid-cols-4" : "grid-cols-3"} gap-3 md:gap-y-8 lg:gap-x-6 lg:gap-y-12 place-items-start mb-8` : "max-w-min overflow-x-scroll flex gap-0"}`}>
                 {Object.entries(termsCoursesData)
                   .filter(([term]) => term !== "outside") // exclude outside
                   .map(([term, courses]) => (
-                    <Droppable dropId={term} key={term} className={`${viewType == "Vertical" ? "w-full min-h-[24vh] h-full" : "w-30 md:w-42 min-h-[60vh] border-r-0 last:border-r-2 rounded-none first:rounded-l-md last:rounded-r-md"} pt-2.5 border-2 flex-shrink-0 border-gray-300 border-dashed rounded-md`}>
-                      <div className={`flex items-center justify-center flex-col md:flex-row gap-1 md:gap-1.5 font-bold text-center ${viewType.includes("Hor") ? "text-[0.8rem] md:text-sm" : "text-sm md:text-base"}`}>
-                        <h2 className="bg-gray-100 rounded px-1.5 py-0.25">{term.split(" | ")[0]}</h2>
-                        <h2 className="bg-gray-100 rounded px-1.5 py-0.25">{(termType.includes("Sem") && parseInt(term.split(" | ")[1]) === 3) || (termType.includes("Quart") && parseInt(term.split(" | ")[1]) === 4) ? "Summer" : termType} {(termType.includes("Sem") && parseInt(term.split(" | ")[1]) === 3) || (termType.includes("Quart") && parseInt(term.split(" | ")[1]) === 4) ? "" : term.split(" | ")[1]}</h2>
+                    <Droppable dropId={term} key={term} className={`${viewType == "Vertical" ? "w-full md:min-h-[24vh] h-full" : "w-30 md:w-42 md:min-h-[60vh] border-r-0 last:border-r-2 rounded-none first:rounded-l-md last:rounded-r-md"} pt-2.5 border-2 flex-shrink-0 border-gray-700 border-dashed rounded-md`}>
+                      <div className={`flex items-center justify-center flex-row gap-1 md:gap-1.5 font-bold text-center text-gray-300 ${viewType.includes("Hor") ? "text-[0.6rem] md:text-sm" : "text-[0.6rem] md:text-base"}`}>
+                        <h2 className="bg-gray-700 rounded px-1.5 py-0.25">{term.split(" | ")[0]}</h2>
+                        <h2 className="bg-gray-700 rounded px-1.5 py-0.25">{(termType.includes("Sem") && parseInt(term.split(" | ")[1]) === 3) || (termType.includes("Quart") && parseInt(term.split(" | ")[1]) === 4) ? "Summer" : termType} {(termType.includes("Sem") && parseInt(term.split(" | ")[1]) === 3) || (termType.includes("Quart") && parseInt(term.split(" | ")[1]) === 4) ? "" : term.split(" | ")[1]}</h2>
                       </div>
-                      <p className="flex justify-center text-xs md:text-sm text-black/70 mt-0.5 md:mt-1">{courses.reduce((sum, course) => { return sum+course.units}, 0)} units</p>
+                      <p className="flex justify-center text-xs md:text-sm text-white/70 mt-0.5 md:mt-1">{courses.reduce((sum, course) => { return sum+course.units}, 0)} units</p>
                       <div className="flex flex-col items-center gap-2 md:gap-3 p-2.5">
                         {courses.length > 0 ? 
                           ([...courses]
@@ -278,12 +278,12 @@ export default function Home() {
                   ))}
               </div>
               
-              <div className={`${viewType == "Vertical" ? "flex-row" : "flex-col"} flex gap-4 items-center justify-center`}>
-                <button onClick={addTerm} className="flex items-center justify-center rounded-full w-10 md:w-16 h-10 md:h-16 bg-blue-100 hover:bg-blue-200 active:bg-blue-300 hover:text-blue-900 transition cursor-pointer">
-                  <LuCalendarPlus className="text-xl md:text-3xl" title="Add Year" aria-label="Add Year" />
+              <div className={`${viewType == "Vertical" ? "flex-row" : "flex-row md:flex-col"} flex gap-2 md:gap-4 items-center justify-center`}>
+                <button onClick={addTerm} className="flex items-center justify-center rounded-full w-full md:w-16 md:h-16 bg-gray-700 hover:bg-gray-800 active:bg-gray-900 text-blue-50 hover:text-blue-100 active:text-blue-200 transition cursor-pointer p-1">
+                  <LuCalendarPlus className="text-lg md:text-3xl mr-2 md:mr-0" title="Add Year" aria-label="Add Year" /><span className="md:hidden">Add Year</span>
                 </button>
-                <button onClick={removeTerm} className="flex items-center justify-center rounded-full w-10 md:w-16 h-10 md:h-16 bg-red-100 hover:bg-red-200 active:bg-red-300 hover:text-red-900 transition cursor-pointer">
-                  <LuCalendarMinus className="text-xl md:text-3xl" title="Remove Year" aria-label="Remove Year" />
+                <button onClick={removeTerm} className="flex items-center justify-center rounded-full w-full md:w-16 md:h-16 bg-gray-700 hover:bg-gray-800 active:bg-gray-900 text-red-50 hover:text-red-100 active:text-red-200 transition cursor-pointer p-1">
+                  <LuCalendarMinus className="text-lg md:text-3xl mr-2 md:mr-0" title="Remove Year" aria-label="Remove Year" /><span className="md:hidden">Remove Year</span>
                 </button>
               </div>
             </div>

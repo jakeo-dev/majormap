@@ -13,7 +13,7 @@ export default function Droppable(props: {
   return (
     <div
       ref={setNodeRef}
-      className={`transition ${isOver && props.dropId === "delete" ? "bg-red-100 text-red-600" : isOver ? "bg-gray-100" : "bg-white"} ${
+      className={`transition inset-shadow-sm ${isOver && props.dropId === "delete" ? "inset-shadow-red-500/50 bg-red-100 text-red-600" : isOver ? "inset-shadow-neutral-400/50 bg-gray-800" : "inset-shadow-neutral-600/50 bg-gray-900"} ${
         props.className
       }`}
     >
